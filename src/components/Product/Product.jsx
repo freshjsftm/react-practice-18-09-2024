@@ -1,7 +1,5 @@
-
-
 const Product = (props) => {
-  const {title, price, quantity} = props;
+  const {product:{ title, price, quantity }} = props;
   return (
     <tr>
       <td>{title}</td>
@@ -9,6 +7,6 @@ const Product = (props) => {
       <td>{quantity} etc.</td>
     </tr>
   );
-}
+};
 
 export default Product;

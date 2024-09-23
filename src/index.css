@@ -18,3 +18,7 @@ table{
 th, td{
   border: 1px solid #555;
 }
+
+.container{
+  flex-wrap: nowrap;
+}
