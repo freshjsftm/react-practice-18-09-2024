@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react'; //hook
 import Icon from '@mdi/react';
 import { mdiThumbUp, mdiThumbDown } from '@mdi/js';
@@ -29,7 +30,7 @@ const UserProfile = (props) => {
   const changeIsDelete = () => {
     setIsDelete(true);
   };
-  if(isDelete) return null;
+  if (isDelete) return null;
   return (
     <article
       onClick={changeIsSelect}
@@ -51,6 +52,14 @@ const UserProfile = (props) => {
       </p>
     </article>
   );
+};
+
+UserProfile.propTypes = {
+  user: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    age: PropTypes.number,
+    email: PropTypes.string.isRequired,
+  }),
 };
 
 export default UserProfile;
