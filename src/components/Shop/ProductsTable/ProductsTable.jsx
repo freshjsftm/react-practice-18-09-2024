@@ -1,10 +1,11 @@
 import Product from '../Product/Product';
-import products from '../data';
-import styles from './ProductsTable.module.css'
+import styles from './ProductsTable.module.css';
 
-const ProductsTable = () => {
+const ProductsTable = (props) => {
+  const { products, addNewProduct } = props;
   const showProduct = (product) => (
-    <Product key={product.id} product={product} />
+    <Product key={product.id} product={product} 
+    addNewProduct={addNewProduct}/>
   );
   return (
     <table className={styles.table}>
