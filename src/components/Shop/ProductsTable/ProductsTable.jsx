@@ -1,11 +1,11 @@
+import PropTypes from 'prop-types';
 import Product from '../Product/Product';
 import styles from './ProductsTable.module.css';
 
 const ProductsTable = (props) => {
   const { products, addNewProduct } = props;
   const showProduct = (product) => (
-    <Product key={product.id} product={product} 
-    addNewProduct={addNewProduct}/>
+    <Product key={product.id} product={product} addNewProduct={addNewProduct} />
   );
   return (
     <table className={styles.table}>
@@ -19,6 +19,11 @@ const ProductsTable = (props) => {
       <tbody>{products.map(showProduct)}</tbody>
     </table>
   );
+};
+
+ProductsTable.propTypes = {
+  products: PropTypes.array,
+  addNewProduct: PropTypes.func,
 };
 
 export default ProductsTable;
