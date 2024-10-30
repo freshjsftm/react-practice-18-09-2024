@@ -1,9 +1,11 @@
-import UsersSection from './components/UsersSection/UsersSection';
+import TimerBack from './components/TimerBack/TimerBack';
 
 function App() {
   return (
     <>
-      <UsersSection />
+      <TimerBack title="Tommorow" dateStr="2024-10-31"/>
+      <TimerBack title="New Year" dateStr="2025-01-01"/>
+      <TimerBack title="Evening" dateStr="2024-10-30 18:27:20"/>
     </>
   );
 }
