@@ -5,6 +5,7 @@ import { mdiThumbUp, mdiThumbDown } from '@mdi/js';
 import cx from 'classnames';
 import styles from './UserProfile.module.scss';
 import { ThemeContext } from '../../contexts';
+import CONSTANTS from '../../constants';
 
 const UserProfile = (props) => {
   const {
@@ -13,7 +14,7 @@ const UserProfile = (props) => {
   const [isSelect, setIsSelect] = useState(false);
   const [amount, setAmount] = useState(0);
   const [isDelete, setIsDelete] = useState(false);
-  const {theme} = useContext(ThemeContext);
+  const {theme, setTheme} = useContext(ThemeContext);
 
   const changeIsSelect = () => {
     setIsSelect(!isSelect);
@@ -37,8 +38,8 @@ const UserProfile = (props) => {
   const articleClasses = cx(styles['user-profile'], {
     [styles['select']]: isSelect,
     [styles['noselect']]: !isSelect,
-    [styles['light']]: theme === 'light',
-    [styles['dark']]: theme === 'dark',
+    [styles['light']]: theme === CONSTANTS.THEME.LIGHT,
+    [styles['dark']]: theme === CONSTANTS.THEME.DARK,
   })
 
   if (isDelete) return null;
