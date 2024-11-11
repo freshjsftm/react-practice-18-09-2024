@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react'; //hook
+import { useState, useContext } from 'react'; //hook
 import Icon from '@mdi/react';
 import { mdiThumbUp, mdiThumbDown } from '@mdi/js';
 import cx from 'classnames';
 import styles from './UserProfile.module.scss';
+import { ThemeContext } from '../../contexts';
 
 const UserProfile = (props) => {
   const {
@@ -12,6 +13,7 @@ const UserProfile = (props) => {
   const [isSelect, setIsSelect] = useState(false);
   const [amount, setAmount] = useState(0);
   const [isDelete, setIsDelete] = useState(false);
+  const {theme} = useContext(ThemeContext);
 
   const changeIsSelect = () => {
     setIsSelect(!isSelect);
@@ -35,6 +37,8 @@ const UserProfile = (props) => {
   const articleClasses = cx(styles['user-profile'], {
     [styles['select']]: isSelect,
     [styles['noselect']]: !isSelect,
+    [styles['light']]: theme === 'light',
+    [styles['dark']]: theme === 'dark',
   })
 
   if (isDelete) return null;

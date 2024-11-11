@@ -1,12 +1,13 @@
 @use '/src/common/styles/colors' as *;
 @use '/src/common/styles/mixins' as *;
+@use '/src/common/styles/template' as *;
 
 $indent: 10px;
 .user-profile {
   padding: $indent;
   padding-left: $indent * 3;
   margin: $indent;
-  background-color: $secondaryBgColor;
+  // background-color: $secondaryBgColor;
   width: 250px;
   h2 > span {
     color: $accentColor;
@@ -29,4 +30,12 @@ $indent: 10px;
 }
 .noselect{
   border: 4px solid $infoColor;
+}
+
+.light{
+  @extend %light;
+}
+
+.dark{
+  @extend %dark;
 }
