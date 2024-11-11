@@ -1,6 +1,11 @@
 import { createContext } from 'react';
 
-export const ThemeContext = createContext(); 
+export const ThemeContext = createContext();
 // const ThemeContext = {Provider:{}, Consumer:{}}
 
-//export const UserContext = createContext(); // const UserContext = {Provider:{}, Consumer:{}}
+const userAccount = {
+  firstName: 'Brad',
+  lastName: 'Pitt',
+};
+export const UserAccountContext = createContext(userAccount);
+// const UserAccountContext = {Provider:{value: userAccount}, Consumer:{}}
