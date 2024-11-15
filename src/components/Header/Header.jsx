@@ -5,6 +5,7 @@ import { mdiWeatherSunny, mdiWeatherNight } from '@mdi/js';
 import CONSTANTS from '../../constants';
 import { withTheme, withUserAccount } from '../HOCs';
 import styles from './Header.module.scss';
+import Menu from '../Menu/Menu';
 
 const Header = (props) => {
   const {theme, setTheme, user: { firstName, lastName }, } = props;
@@ -21,6 +22,7 @@ const Header = (props) => {
   });
   return (
     <header className={headerClasses}>
+      <Menu />
       <p>
         Hi! {firstName} {lastName}
       </p>
